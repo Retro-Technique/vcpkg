@@ -1,16 +1,12 @@
 {
   "name": "retrocode",
   "version": "0.1.0.0",
-  "port-version": 4,
+  "port-version": 5,
   "description": "RetroCode C++ utilities library",
   "homepage": "https://github.com/Retro-Technique/RetroCode",
   "dependencies": [
     {
-      "name": "vcpkg-cmake",
-      "host": true
-    },
-    {
-      "name": "vcpkg-cmake-config",
+      "name": "vcpkg-msbuild",
       "host": true
     }
   ],

@@ -6,7 +6,7 @@ vcpkg_from_git(
   
 if("math" IN_LIST FEATURES)
 
-    vcpkg_install_msbuild(
+    vcpkg_msbuild_install(
         SOURCE_PATH "${SOURCE_PATH}"
         PROJECT_SUBPATH "VisualC/RetroCode.sln"
         INCLUDES_SUBPATH "include"
