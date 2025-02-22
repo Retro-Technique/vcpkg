@@ -1,0 +1,27 @@
+{
+  "name": "retrocode",
+  "version": "0.1.0.0",
+  "description": "RetroCode C++ utilities library",
+  "homepage": "https://github.com/Retro-Technique/RetroCode",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ],
+  "features": {
+    "math": {
+      "description": "Adding RetroCode-Math - 2D Math Library"
+    },
+    "memory": {
+      "description": "Adding RetroCode-Memory - Memory management Library"
+    },
+    "multimedia": {
+      "description": "Adding RetroCode-Multimedia - Multimedia Library"
+    }
+  }
+}
