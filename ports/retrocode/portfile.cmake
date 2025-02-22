@@ -11,7 +11,7 @@ if("math" IN_LIST FEATURES)
         PROJECT_SUBPATH "VisualC/RetroCode.sln"
         INCLUDES_SUBPATH "include"
         USE_VCPKG_INTEGRATION
-        TARGET Build
+        TARGET RetroCode-Math
         RELEASE_CONFIGURATION "Release"
         DEBUG_CONFIGURATION "Debug"
         ALLOW_ROOT_INCLUDES
