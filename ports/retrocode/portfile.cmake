@@ -31,4 +31,31 @@ if("math" IN_LIST FEATURES)
 
 endif()
 
+if("multimedia" IN_LIST FEATURES)
+
+    vcpkg_msbuild_install(
+        SOURCE_PATH "${SOURCE_PATH}"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
+        INCLUDES_SUBPATH "include"
+        USE_VCPKG_INTEGRATION
+        TARGET RetroCode-Multimedia
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
+        ALLOW_ROOT_INCLUDES
+        PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
+    )
+
+    vcpkg_copy_pdbs()
+
+    file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Multimedia/*.h")
+    file(INSTALL
+        ${HEADER_FILES}
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Multimedia")
+
+    file(INSTALL
+        ${SOURCE_PATH}/include/RetroCode/Multimedia.h
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
+
+endif()
+
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
