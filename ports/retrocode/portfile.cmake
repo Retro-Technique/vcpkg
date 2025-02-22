@@ -1,7 +1,7 @@
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
     URL https://github.com/Retro-Technique/RetroCode
-    REF 7275370f3700b6867bca6f25da33de257498e633
+    REF e4dcb00d999c6e5556358e5b12dd9d060cd189c0
 )
   
 if("math" IN_LIST FEATURES)
