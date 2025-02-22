@@ -24,9 +24,10 @@ if("math" IN_LIST FEATURES)
     file(INSTALL
         ${HEADER_FILES}
         DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Math")
+
     file(INSTALL
         ${SOURCE_PATH}/include/RetroCode/Math.h
-        DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
 
 endif()
 
