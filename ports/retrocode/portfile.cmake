@@ -31,6 +31,33 @@ if("math" IN_LIST FEATURES)
 
 endif()
 
+if("memory" IN_LIST FEATURES)
+
+    vcpkg_msbuild_install(
+        SOURCE_PATH "${SOURCE_PATH}"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
+        INCLUDES_SUBPATH "include"
+        USE_VCPKG_INTEGRATION
+        TARGET RetroCode\\RetroCode-Memory
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
+        ALLOW_ROOT_INCLUDES
+        PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
+    )
+
+    vcpkg_copy_pdbs()
+
+    file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Memory/*.h")
+    file(INSTALL
+        ${HEADER_FILES}
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Memory")
+
+    file(INSTALL
+        ${SOURCE_PATH}/include/RetroCode/Memory.h
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
+
+endif()
+
 if("multimedia" IN_LIST FEATURES)
 
     vcpkg_msbuild_install(
