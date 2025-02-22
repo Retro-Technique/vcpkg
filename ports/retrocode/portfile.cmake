@@ -8,13 +8,17 @@ if("math" IN_LIST FEATURES)
 
     vcpkg_install_msbuild(
         SOURCE_PATH "${SOURCE_PATH}"
-        PROJECT_SUBPATH "RetroCode.sln"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
         INCLUDES_SUBPATH "include"
         USE_VCPKG_INTEGRATION
         TARGET RetroCode-Math
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
         ALLOW_ROOT_INCLUDES
         PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
     )
+
+    vcpkg_copy_pdbs()
 
     file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Math/*.h")
     file(INSTALL
@@ -25,6 +29,5 @@ if("math" IN_LIST FEATURES)
         DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 
 endif()
-
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
