@@ -1,7 +1,7 @@
 {
   "name": "retrocode",
-  "version": "0.1.0.0",
-  "port-version": 9,
+  "version": "1.0.0.0",
+  "port-version": 0,
   "description": "RetroCode C++ utilities library",
   "homepage": "https://github.com/Retro-Technique/RetroCode",
   "dependencies": [
@@ -11,14 +11,23 @@
     }
   ],
   "features": {
+    "collection": {
+      "description": "Adding RetroCode-Collection - Containers library"
+    },
+    "image": {
+      "description": "Adding RetroCode-Image - Image encoding and decoding library"
+    },
     "math": {
-      "description": "Adding RetroCode-Math - 2D Math Library"
+      "description": "Adding RetroCode-Math - 2D math functions library"
     },
     "memory": {
-      "description": "Adding RetroCode-Memory - Memory management Library"
+      "description": "Adding RetroCode-Memory - Memory management library"
     },
     "multimedia": {
-      "description": "Adding RetroCode-Multimedia - Multimedia Library"
+      "description": "Adding RetroCode-Multimedia - Multimedia library"
+    },
+    "time": {
+      "description": "Adding RetroCode-Time - Time management library"
     }
   }
 }
