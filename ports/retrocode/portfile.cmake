@@ -1,7 +1,7 @@
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
     URL https://github.com/Retro-Technique/RetroCode
-    REF d2c6a52d1412f0f00a6a8198c4986db4ee5f9dd2
+    REF f2facbbd719edc1525e5d028a3373d05f4607c83
 )
 
 if("collection" IN_LIST FEATURES)
@@ -27,6 +27,33 @@ if("collection" IN_LIST FEATURES)
 
     file(INSTALL
         ${SOURCE_PATH}/include/RetroCode/Collection.h
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
+
+endif()
+
+if("exception" IN_LIST FEATURES)
+
+    vcpkg_msbuild_install(
+        SOURCE_PATH "${SOURCE_PATH}"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
+        INCLUDES_SUBPATH "include"
+        USE_VCPKG_INTEGRATION
+        TARGET RetroCode\\RetroCode-Exception
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
+        ALLOW_ROOT_INCLUDES
+        PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
+    )
+
+    vcpkg_copy_pdbs()
+
+    file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Exception/*.h")
+    file(INSTALL
+        ${HEADER_FILES}
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Exception")
+
+    file(INSTALL
+        ${SOURCE_PATH}/include/RetroCode/Exception.h
         DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
 
 endif()
@@ -139,6 +166,33 @@ if("multimedia" IN_LIST FEATURES)
 
 endif()
 
+if("regex" IN_LIST FEATURES)
+
+    vcpkg_msbuild_install(
+        SOURCE_PATH "${SOURCE_PATH}"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
+        INCLUDES_SUBPATH "include"
+        USE_VCPKG_INTEGRATION
+        TARGET RetroCode\\RetroCode-Regex
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
+        ALLOW_ROOT_INCLUDES
+        PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
+    )
+
+    vcpkg_copy_pdbs()
+
+    file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Regex/*.h")
+    file(INSTALL
+        ${HEADER_FILES}
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Regex")
+
+    file(INSTALL
+        ${SOURCE_PATH}/include/RetroCode/Regex.h
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
+
+endif()
+
 if("time" IN_LIST FEATURES)
 
     vcpkg_msbuild_install(
@@ -162,6 +216,33 @@ if("time" IN_LIST FEATURES)
 
     file(INSTALL
         ${SOURCE_PATH}/include/RetroCode/Time.h
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
+
+endif()
+
+if("window" IN_LIST FEATURES)
+
+    vcpkg_msbuild_install(
+        SOURCE_PATH "${SOURCE_PATH}"
+        PROJECT_SUBPATH "VisualC/RetroCode.sln"
+        INCLUDES_SUBPATH "include"
+        USE_VCPKG_INTEGRATION
+        TARGET RetroCode\\RetroCode-Window
+        RELEASE_CONFIGURATION "Release"
+        DEBUG_CONFIGURATION "Debug"
+        ALLOW_ROOT_INCLUDES
+        PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
+    )
+
+    vcpkg_copy_pdbs()
+
+    file(GLOB HEADER_FILES LIST_DIRECTORIES false "${SOURCE_PATH}/include/RetroCode/Window/*.h")
+    file(INSTALL
+        ${HEADER_FILES}
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode/Window")
+
+    file(INSTALL
+        ${SOURCE_PATH}/include/RetroCode/Window.h
         DESTINATION "${CURRENT_PACKAGES_DIR}/include/RetroCode")
 
 endif()
