@@ -14,5 +14,16 @@
         "name": "vcpkg-cmake-config",
         "host": true
     }
-    ]
+  ],
+  "features": {
+    "math": {
+      "description": "Adding libretro-math - 2D math features library"
+    },
+    "image": {
+      "description": "Adding libretro-image - Image library"
+    },
+    "graphics": {
+      "description": "Adding libretro-graphics - 2D graphics features library"
+    }
+  }
 }
