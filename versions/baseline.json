@@ -3,6 +3,10 @@
     "retrocode": {
       "baseline": "1.2.0.0",
       "port-version": 0
+    },
+    "libretro": {
+      "baseline": "1.0.0",
+      "port-version": 0
     }
   }
 }
