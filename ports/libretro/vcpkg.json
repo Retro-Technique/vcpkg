@@ -1,7 +1,7 @@
 {
   "name": "libretro",
   "version": "0.0.1",
-  "port-version": 0,
+  "port-version": 1,
   "description": "Modern C++ minimalist utility library for cross-platform development",
   "homepage": "https://github.com/Retro-Technique/libretro",
   "license": "CeCILL",
